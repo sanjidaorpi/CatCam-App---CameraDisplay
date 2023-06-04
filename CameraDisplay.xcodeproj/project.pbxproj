@@ -14,6 +14,7 @@
 		840445B12A2CF9D300819E7B /* CameraDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840445B02A2CF9D300819E7B /* CameraDisplayTests.swift */; };
 		840445BB2A2CF9D300819E7B /* CameraDisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840445BA2A2CF9D300819E7B /* CameraDisplayUITests.swift */; };
 		840445BD2A2CF9D300819E7B /* CameraDisplayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840445BC2A2CF9D300819E7B /* CameraDisplayUITestsLaunchTests.swift */; };
+		840445CA2A2D0C9300819E7B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840445C92A2D0C9300819E7B /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		840445B62A2CF9D300819E7B /* CameraDisplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraDisplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840445BA2A2CF9D300819E7B /* CameraDisplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDisplayUITests.swift; sourceTree = "<group>"; };
 		840445BC2A2CF9D300819E7B /* CameraDisplayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDisplayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		840445C92A2D0C9300819E7B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		840445932A2CF9D100819E7B = {
 			isa = PBXGroup;
 			children = (
+				840445C92A2D0C9300819E7B /* ImagePicker.swift */,
 				8404459E2A2CF9D100819E7B /* CameraDisplay */,
 				840445AF2A2CF9D300819E7B /* CameraDisplayTests */,
 				840445B92A2CF9D300819E7B /* CameraDisplayUITests */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840445CA2A2D0C9300819E7B /* ImagePicker.swift in Sources */,
 				840445A22A2CF9D100819E7B /* ContentView.swift in Sources */,
 				840445A02A2CF9D100819E7B /* CameraDisplayApp.swift in Sources */,
 			);
@@ -422,6 +426,7 @@
 				DEVELOPMENT_TEAM = 6C4P36HP6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is needed.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -451,6 +456,7 @@
 				DEVELOPMENT_TEAM = 6C4P36HP6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is needed.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
