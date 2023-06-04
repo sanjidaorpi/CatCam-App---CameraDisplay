@@ -1,8 +1,7 @@
 //
 //  CameraDisplayApp.swift
 //  CameraDisplay
-//
-//  Created by Sanjida Orpi on 6/4/23.
+//  Created by Sanjida Orpi.
 //
 
 import SwiftUI

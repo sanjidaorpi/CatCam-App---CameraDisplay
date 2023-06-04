@@ -8,36 +8,50 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
-    @State private var isImagePickerShowing = false
-    @State private var selectedImage: UIImage?
-
+    @State private var showSheet: Bool = false
+    @State private var showImagePicker: Bool = false
+    @State private var sourceType: UIImagePickerController.SourceType = .camera
+    @State private var image: UIImage?
+    
     var body: some View {
-        VStack {
-            Text("Welcome to CatCam")
-                .font(.largeTitle)
-                .padding()
-            
-            if let image = selectedImage {
-                Image(uiImage: image)
+        NavigationView {
+            VStack {
+                
+                Text("Welcome to CatCam, the social media app for cat pics!")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(Color.pink.opacity(0.5))
+                    .padding(.horizontal, 20)
+                    .padding(.vertical)
+                
+                Image(uiImage: image ?? UIImage(named: "pusheenpic")!)
                     .resizable()
-                    .scaledToFit()
-                    .aspectRatio(contentMode: .fit)
-            } else {
-                Image("CatCam")
-                    .resizable()
-                    .scaledToFit()
-                    .aspectRatio(contentMode: .fit)
-            }
-
-            Text("Set A Profile Picture")
+                    .clipShape(Circle())
+                .aspectRatio(contentMode: .fit)
+                    
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .fill(Color.pink.opacity(0.5))
+                    .frame(width: 200, height: 44)
+                    .overlay(
+                Button("Set Profile Picture") {
+                    self.showSheet = true
+                })
                 .padding()
-            
-            Button("Choose from camera roll") {
-                isImagePickerShowing = true
+                
+                .actionSheet(isPresented: $showSheet) {
+                    ActionSheet(title: Text("Choose Photo"), buttons: [
+                            .default(Text("Photo Library")) {
+                                self.showImagePicker = true
+                                self.sourceType = .photoLibrary
+                            },
+                            .cancel()
+                        ])
+                }
             }
-        }
-        .sheet(isPresented: $isImagePickerShowing) {
-            ImagePicker(isImagePickerShowing: $isImagePickerShowing, selectedImage: $selectedImage)
+            .navigationBarTitle("CatCam")
+        
+            
+        }.sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: self.$image, isShown: self.$showImagePicker)
         }
     }
 }
